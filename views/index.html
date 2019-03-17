@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TimeStamp Microservice</title>
+    <meta name="description" content="freeCodeCamp #1 API Challenge">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  
+  <body>
+    <div class="wrapper">
+      <h1>
+        API Challenge: Timestamp Microservice
+      </h1>
+      <div id="userstories">
+      <blockquote>
+                User stories:
+                <ul>1. I can pass a string as a parameter, and it will check to see whether that string 
+                contains either a unix timestamp or a natural language date (example: January 1, 2016);</ul>
+                <ul>2. If it does, it returns both the Unix timestamp and the natural language form of that date;</ul>
+                <ul>3. If the date string is invalid the api returns a JSON having the structure 
+{"error" : "Invalid Date" }.</ul>
+                
+      </blockquote>
+      <h3>Example usage:</h3>
+            <a href = "https://freecodecamp-api-timestamp.glitch.me/2015-12-25">https://freecodecamp-api-timestamp.glitch.me/2015-12-25</a><br>
+            <a href = "https://freecodecamp-api-timestamp.glitch.me/1450137600">https://freecodecamp-api-timestamp.glitch.me/1450137600</a>
+      <h3>Example output:</h3>
+            <code>
+                {
+                  "unix": 1450137600,
+                  "natural": "December 15, 2015"
+                }
+            </code>
+      </div>
+      <br>
+      <a target = "_blank" href="https://codepen.io/redhairedgadget/">
+        Made by Redhairedgadget
+      </a>
+    </div>
+  </body>
+</html>

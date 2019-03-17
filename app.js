@@ -8,9 +8,14 @@ var app = module.exports = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+//Importing data from static files and setting up view
+app.use(express.static('public'));
+app.get("/", function (request, response) {
+  response.sendFile(__dirname + '/views/index.html');
+});
 
 //GET to return JSON that formats natural and unix date
-app.get('/data/:date', function(req, res, next){
+app.get('/:date', function(req, res, next){
     var date = req.params.date;
 
     var options = {
@@ -28,6 +33,12 @@ app.get('/data/:date', function(req, res, next){
         var naturalDate = new Date(date * 1000);
         naturalDate = naturalDate.toLocaleDateString('en-us', options);
     };
-
-    res.json({unix: unixDate, natural: naturalDate});
+  
+    if(naturalDate == "Invalid Date" || unixDate == "Invalid Date"){
+       res.json({error: "Invalid Date"})
+    }else{
+        res.json({unix: unixDate, natural: naturalDate});
+    }
 });
+
+app.listen(process.env.PORT);
